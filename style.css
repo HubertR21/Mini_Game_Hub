@@ -1,0 +1,49 @@
+.login
+{
+    font-size: 60px;
+    font-family: 'Comic Sans MS',serif;
+}
+body
+{
+    background-color: #96C9DA;
+    color: #000000;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    margin: 0 !important;
+}
+.insides
+{
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.logo_bg
+{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #757c9b;
+    text-align: center;
+}
+.logo_bg_small
+{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #757c9b;
+    text-align: center;
+    overflow:hidden;
+}
+.logo_text
+{
+    color: #ffffff;
+    font-size: 50px;
+    text-align: center;
+}
+.logo_small{
+    background-color: #757c9b;
+}
+ul#horizontal-list
+{
+    list-style: none;
+}
