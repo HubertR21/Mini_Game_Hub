@@ -1,6 +1,6 @@
 .login
 {
-    font-size: 60px;
+    font-size: 50px;
     font-family: 'Comic Sans MS',serif;
 }
 body
@@ -37,7 +37,7 @@ body
 .logo_text
 {
     color: #ffffff;
-    font-size: 50px;
+    font-size: 3vw;
     text-align: center;
 }
 .logo_small{
@@ -46,4 +46,25 @@ body
 ul#horizontal-list
 {
     list-style: none;
+}
+
+fieldset
+{
+    text-align: center;
+    margin-left: 15%;
+    margin-right: 15%;
+    display: block;
+    border-radius: 25px;
+    border-style: solid;
+    border-color: #0b3ef5;
+    overflow:hidden;
+    padding: 3%;
+}
+table
+{
+    overflow-x:auto;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+    border: #0b3ef5;
 }
