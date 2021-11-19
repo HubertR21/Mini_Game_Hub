@@ -5,8 +5,8 @@
 
 	// check to see if there is a user already logged in, if so redirect them
 	session_start();
-	if (isset($_SESSION['username']) && isset($_SESSION['userid']))
-		header("Location: ".SITE_ADDR."/index.php"); // redirect the user to the home page
+	#if (isset($_SESSION['username']) && isset($_SESSION['userid']))
+	#	header("Location: ".SITE_ADDR."/index.php"); // redirect the user to the home page
 	
 	// see if the user clicked the register button
 	if (isset($_POST['registerBtn'])){
@@ -22,26 +22,30 @@
 			if ($passwd === $passwd_again){
 				// make sure the password meets the min strength requirements
 				if ( strlen($passwd) >= 5 && strpbrk($passwd, "!#$.,:;()") != false ){
-					
+
 					// connect to the database
 					$conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWD, DB_NAME);
 
 					// query the database to see if the username is taken
 					$query = mysqli_query($conn, "SELECT * FROM users WHERE username='{$username}'");
+					print "we're out";
 					if (mysqli_num_rows($query) == 0){
 						
 						// create and format some variables for the database
-						$id = '';
+						$id = 'DEFAULT';
 						$passwd = md5($passwd);
-						$date_created = time();
-						$last_login = 0;
+						$date_created = 'NULL';#time();
+						$last_login = 'NULL';#0;
 						$status = 1;
-						
+
 						// insert the user into the database
-						mysql_query("INSERT INTO users VALUES (
-							'{$id}', '{$username}', '{$email}', '{$passwd}', '{$date_created}', '{$last_login}', '{$status}'
+						mysqli_query($conn, "INSERT INTO users VALUES (
+							{$id}, '{$username}', '{$email}', '{$passwd}', {$date_created}, {$last_login}, {$status}
 						)");
-						
+
+						$text_query = "INSERT INTO users VALUES ({$id}, '{$username}', '{$email}', '{$passwd}', '{$date_created}', '{$last_login}', {$status})";
+						print $text_query;
+						print 'We are in';
 						// verify the user's account was created
 						$query = mysqli_query($conn, "SELECT * FROM users WHERE username='{$username}'");
 						if (mysqli_num_rows($query) == 1){

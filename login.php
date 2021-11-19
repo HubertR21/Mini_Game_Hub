@@ -4,8 +4,8 @@
 	$title = 'Login Page | member system tutorial | HeyTuts.com';
 
 	session_start();
-	if (isset($_SESSION['username']) && isset($_SESSION['userid']))
-		header("Location: ./index.php"); // redirect the user to the home page
+	#if (isset($_SESSION['username']) && isset($_SESSION['userid']))
+	#	header("Location: ./index.php"); // redirect the user to the home page
 	
 	// check to see if the user clicked the login button
 	if (isset($_POST['loginBtn'])){
