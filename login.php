@@ -45,7 +45,7 @@
 						$success = true;
 						
 						// redirect the user to the home page
-						header("Location: ./index.php");
+						header("Location: ./MiniGameHubMenu.php");
 					}
 					else
 						$error_msg = 'Please activate your account before you login.';

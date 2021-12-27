@@ -9,9 +9,9 @@
 		session_destroy();
 		
 		// redirect to the home page
-		header("Location: ".SITE_ADDR."/");
+		header("Location: ./MiniGameHubMenu.php");
 	}
 	else
-		header("Location: ".SITE_ADDR."/login.php"); // redirect the user to the login page
+		header("Location: ./login.php"); // redirect the user to the login page
 	
 ?>
