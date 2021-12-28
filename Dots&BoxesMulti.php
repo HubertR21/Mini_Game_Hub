@@ -24,10 +24,10 @@
     <h1 class="logo_text" >
     <?php
     if ($LOGGED_IN == true){
-        echo 'Dots and Boxes, ' ;
+        echo 'Multiplayer Dots and Boxes, ' ;
         echo 'User: '.$_SESSION['username']. '';
         }else{
-        echo 'Dots and Boxes ';
+        echo 'Unable to connect ';
         }
     ?>
     </h1>
@@ -62,15 +62,6 @@
     </div>
 
     <script src="./Dots&Boxes.js"></script>
-
-    <a class="logo_text" href="Dots&BoxesCon.php"> Online Multiplayer </a>
-
-    <h1> About the game </h1>
-    <p>
-        Dots and Boxes is a pencil-and-paper game for two players. It was first published in the 19th century by French mathematician Édouard Lucas, who called it la pipopipette. It has gone by many other names, including the dots and dashes, game of dots, dot to dot grid, boxes, and pigs in a pen.
-        <br>
-        The game starts with an empty grid of dots. Usually two players take turns adding a single horizontal or vertical line between two unjoined adjacent dots. A player who completes the fourth side of a 1×1 box earns one point and takes another turn. A point is typically recorded by placing a mark that identifies the player in the box, such as an initial. The game ends when no more lines can be placed. The winner is the player with the most points. The board may be of any size grid. When short on time, or to learn the game, a 2×2 board (3×3 dots) is suitable. A 5×5 board, on the other hand, is good for experts.
-    </p>
 </div>
 
 

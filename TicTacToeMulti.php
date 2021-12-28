@@ -24,10 +24,10 @@
         <h1 class="logo_text" >
         <?php
             if ($LOGGED_IN == true){
-                echo 'TicTacToe, ' ;
+                echo 'Multiplayer TicTacToe, ' ;
                 echo 'User: '.$_SESSION['username']. '';
                 }else{
-                echo 'TicTacToe ';
+                echo 'Unable to connect ';
                 }
         ?>
         </h1>
@@ -52,17 +52,6 @@
     </section>
 
     <script src="TicTacToe.js"></script>
-    <div class="insides">
-
-        <a class="logo_text" href="TicTacToeCon.php"> Online Multiplayer </a>
-
-        <h1> About the game </h1>
-        <p>
-            Tic-tac-toe (American English), noughts and crosses (Commonwealth English), or Xs and Os (Irish English) is a paper-and-pencil game for two players who take turns marking the spaces in a three-by-three grid with X or O. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
-        </p>
-    </div>
-
-
 
 </body>
 </html>
