@@ -51,7 +51,7 @@
         <button class="game--restart">Restart Game</button>
     </section>
 
-    <script src="TicTacToe.js"></script>
+    <script src="TicTacToeMulti.js"></script>
 
 </body>
 </html>
