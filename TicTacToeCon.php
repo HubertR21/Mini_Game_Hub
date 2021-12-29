@@ -43,10 +43,11 @@
         $user1 = $_SESSION['userid'];
         $time = time();
         $turn = rand(1,2);
+        $id = 'DEFAULT';
         // adds first record into the database
-        mysqli_query($conn, "INSERT INTO tictactoe VALUES({$user1},{$user2},{$turn},{$time},0,0,0,0,0,0,0,0,0)");
+        mysqli_query($conn, "INSERT INTO tictactoe VALUES({$id},{$user1},{$user2},{$turn},{$time},0,0,0,0,0,0,0,0,0)");
         //debugging
-        $text_query = "INSERT INTO tictactoe VALUES({$user1},{$user2},{$turn},{$time},0,0,0,0,0,0,0,0,0)";
+        $text_query = "INSERT INTO tictactoe VALUES({$id},{$user1},{$user2},{$turn},{$time},0,0,0,0,0,0,0,0,0)";
         print $text_query;
         // go toward the game subsite
         header("Location: ./TicTacToeMulti.php");
