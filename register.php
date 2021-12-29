@@ -34,16 +34,18 @@
 						// create and format some variables for the database
 						$id = 'DEFAULT';
 						$passwd = md5($passwd);
-						$date_created = 'NULL';#time();
-						$last_login = 'NULL';#0;
+						$date_created = 'DEFAULT';#time();
+						$last_login = 'DEFAULT';#0;
 						$status = 1;
+						$tic_state = 'DEFAULT';
+						$box_state = 'DEFAULT';
 
 						// insert the user into the database
 						mysqli_query($conn, "INSERT INTO users VALUES (
 							{$id}, '{$username}', '{$email}', '{$passwd}', {$date_created}, {$last_login}, {$status}
 						)");
 
-						$text_query = "INSERT INTO users VALUES ({$id}, '{$username}', '{$email}', '{$passwd}', '{$date_created}', '{$last_login}', {$status})";
+						$text_query = "INSERT INTO users VALUES ({$id}, '{$username}', '{$email}', '{$passwd}', '{$date_created}', '{$last_login}', {$status}, {$tic_state}, {$box_state})";
 						print $text_query;
 						print 'We are in';
 						// verify the user's account was created
