@@ -45,7 +45,7 @@
 						$success = true;
 						
 						// redirect the user to the home page
-						header("Location: ./MiniGameHubMenu.php");
+						header("Location: ./MiniGameHubMenu.php"); // php how to return json? zatępujemy to
 					}
 					else
 						$error_msg = 'Please activate your account before you login.';

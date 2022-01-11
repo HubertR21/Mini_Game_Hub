@@ -35,6 +35,7 @@
         $query = mysqli_query($conn, "SELECT * FROM users WHERE tic_state=1 AND username!='{$_SESSION['username']}'");
         $record = mysqli_fetch_assoc($query);
         $user2 = $record['id'];
+        $_SESSION['enemy_id'] = $user2; //enemy jest w sesji
         sleep(2);
         // update searching state for the user to 0
         mysqli_query($conn, "UPDATE users SET tic_state=0 WHERE id='{$_SESSION['userid']}'");

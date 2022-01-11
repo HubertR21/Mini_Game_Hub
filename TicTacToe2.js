@@ -1,5 +1,4 @@
 const statusDisplay = document.querySelector('.game--status');
-
 let gameActive = true;
 let currentPlayer = "X";
 let gameState = ["", "", "", "", "", "", "", "", ""];
@@ -25,10 +24,12 @@ function handleCellPlayed(clickedCell, clickedCellIndex) {
     console.log("ehh");
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
-    var neededData = 0;
-    $.getJSON('get.php', data, function(jsonData) {
-        neededData = jsonData;
+    var neededData = null;
+    $.getJSON('GetReal.php',{}, function(jsonData) {
         console.log("We're in");
+        console.log(jsonData);
+        neededData = jsonData;
+
     });
     console.log("ehh");
     console.log(neededData);
