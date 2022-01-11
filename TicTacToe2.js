@@ -25,12 +25,13 @@ function handleCellPlayed(clickedCell, clickedCellIndex) {
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
     var neededData = null;
-    $.getJSON('GetReal.php',{}, function(jsonData) {
+    $.getJSON('InitialInfoInitialInfo.php',{}, function(jsonData) {
         console.log("We're in");
         console.log(jsonData);
         neededData = jsonData;
 
     });
+
     console.log("ehh");
     console.log(neededData);
 }
