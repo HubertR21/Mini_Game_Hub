@@ -36,19 +36,21 @@
         $record = mysqli_fetch_assoc($query);
         $user2 = $record['id'];
         $_SESSION['enemy_id'] = $user2; //enemy jest w sesji
-        sleep(2);
+        sleep(1);
         // update searching state for the user to 0
         mysqli_query($conn, "UPDATE users SET tic_state=0 WHERE id='{$_SESSION['userid']}'");
-        sleep(2);
+        sleep(1);
         // define our id, time and randomize whose the first turn is
         $user1 = $_SESSION['userid'];
         $time = time();
         $turn = rand(1,2);
         $id = 'DEFAULT';
+        $last_move='DEFAULT';
         // adds first record into the database
-        mysqli_query($conn, "INSERT INTO tictactoe VALUES({$id},{$user1},{$user2},{$turn},{$time},0,0,0,0,0,0,0,0,0)");
+        mysqli_query($conn, "INSERT INTO tictactoe VALUES({$id},{$user1},{$user2},{$turn},{$time},0,0,0,0,0,0,0,0,0,{$last_move})");
+        sleep(2);
         //debugging
-        $text_query = "INSERT INTO tictactoe VALUES({$id},{$user1},{$user2},{$turn},{$time},0,0,0,0,0,0,0,0,0)";
+        $text_query = "INSERT INTO tictactoe VALUES({$id},{$user1},{$user2},{$turn},{$time},0,0,0,0,0,0,0,0,0,{$last_move})";
         print $text_query;
         // go toward the game subsite
         header("Location: ./TicTacToeMulti.php");

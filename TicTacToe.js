@@ -22,16 +22,9 @@ const winningConditions = [
 ];
 
 function handleCellPlayed(clickedCell, clickedCellIndex) {
-    console.log("ehh");
+    console.log("single");
     gameState[clickedCellIndex] = currentPlayer;
     clickedCell.innerHTML = currentPlayer;
-    var neededData = 0;
-    $.getJSON('get.php', data, function(jsonData) {
-        neededData = jsonData;
-        console.log("We're in");
-    });
-    console.log("ehh");
-    console.log(neededData);
 }
 
 function handlePlayerChange() {

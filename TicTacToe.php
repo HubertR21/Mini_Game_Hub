@@ -51,7 +51,7 @@
         <button class="game--restart">Restart Game</button>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="TicTacToe2.js"></script>
+    <script src="TicTacToe.js"></script>
     <div class="insides">
 
         <a class="logo_text" href="TicTacToeCon.php"> Online Multiplayer </a>

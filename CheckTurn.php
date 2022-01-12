@@ -10,13 +10,13 @@
     //connecting to the data base
     $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWD, DB_NAME);
     //setting users from js (you need to post it from js)
-    $user1 = NULL;
-    $user2 = NULL;
+    $user1 = $_POST['user1'];
+    $user2 = $_POST['user2'];
     $sql2 = mysqli_query($conn,"SELECT * FROM tictactoe WHERE (user1 = $user1 AND user2 = $user2)
                                        AND id = (SELECT max(id) FROM tictactoe WHERE (user1 = $user1 AND user2 = $user2))");
     // testing
     $emparray = array();
-    while ($row = mysqli_fetch_assoc($query)) {
+    while ($row = mysqli_fetch_assoc($sql2)) {
        $emparray[] = $row;
     }
     echo json_encode($emparray);
