@@ -28,7 +28,7 @@
 
 					// query the database to see if the username is taken
 					$query = mysqli_query($conn, "SELECT * FROM users WHERE username='{$username}'");
-					print "we're out";
+					#print "we're out";
 					if (mysqli_num_rows($query) == 0){
 						
 						// create and format some variables for the database
@@ -42,12 +42,13 @@
 
 						// insert the user into the database
 						mysqli_query($conn, "INSERT INTO users VALUES (
-							{$id}, '{$username}', '{$email}', '{$passwd}', {$date_created}, {$last_login}, {$status}
+							{$id}, '{$username}', '{$email}', '{$passwd}', {$date_created}, {$last_login}, {$status}, {$tic_state}, {$box_state}
 						)");
 
-						$text_query = "INSERT INTO users VALUES ({$id}, '{$username}', '{$email}', '{$passwd}', '{$date_created}', '{$last_login}', {$status}, {$tic_state}, {$box_state})";
-						print $text_query;
-						print 'We are in';
+						$text_query = "INSERT INTO users VALUES ({$id}, '{$username}', '{$email}', '{$passwd}',
+						{$date_created}, {$last_login}, {$status}, {$tic_state}, {$box_state})";
+						#print $text_query;
+						#print 'We are in';
 						// verify the user's account was created
 						$query = mysqli_query($conn, "SELECT * FROM users WHERE username='{$username}'");
 						if (mysqli_num_rows($query) == 1){

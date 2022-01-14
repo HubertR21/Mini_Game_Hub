@@ -36,6 +36,7 @@ var MyId=(function() {
 
 console.log(InitialData[0]);
 function CheckTurnEverySec(){
+    statusDisplay.innerHTML = cp();
     $.ajax({
     type:'POST',
     url:'CheckTurn.php',
@@ -44,6 +45,7 @@ function CheckTurnEverySec(){
     async:false,
     success:function(data){
         CheckTurn = data;
+        console.log(MyTurn)
     }
     });
 
@@ -76,8 +78,14 @@ var t=setInterval(CheckTurnEverySec,500);
 const winningMessage = () => `Player ${currentPlayer} has won!`;
 const drawMessage = () => `Game ended in a draw!`;
 //const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
-const currentPlayerTurn = () => `It's ${(MyTurn) ? "your": "enemy"} turn`;
-statusDisplay.innerHTML = currentPlayerTurn();
+function cp(){
+if(MyTurn){
+    return 'It is your turn';
+}else{
+    return 'It is enemy turn';
+}}
+//const currentPlayerTurn = () => if (MyTurn){`It's ${(MyTurn?'your':'enemy'}'s turn`;
+statusDisplay.innerHTML = cp();
 
 const winningConditions = [
     [0, 1, 2],
@@ -112,7 +120,7 @@ function handleCellPlayed(clickedCell, clickedCellIndex, flag) {
     }
 function handlePlayerChange() {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
-    statusDisplay.innerHTML = currentPlayerTurn();
+    statusDisplay.innerHTML = cp();
 }
 
 function handleResultValidation() {
@@ -163,10 +171,9 @@ function handleRestartGame() {
     gameActive = true;
     currentPlayer = "X";
     gameState = ["", "", "", "", "", "", "", "", ""];
-    statusDisplay.innerHTML = currentPlayerTurn();
+    statusDisplay.innerHTML = cp();
     document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
 }
 
 
 document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
-document.querySelector('.game--restart').addEventListener('click', handleRestartGame);

@@ -76,7 +76,7 @@
 
                     <h1 class="logo_text" > Log in </h1>
 
-                    <a class="logo_text" href="MiniGameHubMenu.html"> Menu </a>
+                    <a class="logo_text" href="MiniGameHubMenu.php"> Menu </a>
         </div>
 
 			<div class="insides">

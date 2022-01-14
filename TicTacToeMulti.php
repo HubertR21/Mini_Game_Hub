@@ -33,8 +33,6 @@
         </h1>
 
         <a class="logo_text" href="MiniGameHubMenu.php"> Menu </a>
-        <a href="CheckTurn.php"> CheckTurn.php </a> <br>
-        <a href="InitialInfo.php"> InitialInfo.php </a> <br>
 
     </div>
     <section>
@@ -50,8 +48,15 @@
             <div data-cell-index="8" class="cell"></div>
         </div>
         <h2 class="game--status"></h2>
-        <button class="game--restart">Restart Game</button>
-        <a class="logo_text" href="TicTacToeCon.php" onclick="this.disabled=true"> Online Multiplayer </a>
+        <script>
+                   function clickAndDisable(link) {
+                     // disable subsequent clicks
+                     link.onclick = function(event) {
+                        event.preventDefault();
+                     }
+                   }
+        </script>
+        <a class="logo_text" href="TicTacToeCon.php" onclick="clickAndDisable(this);"> Online Multiplayer </a>
     </section>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="TicTacToe2.js"></script>
